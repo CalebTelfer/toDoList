@@ -42,4 +42,14 @@ export function loadHomePage() {
     nav.appendChild(viewProjects);
     nav.appendChild(createNewProject);
     nav.appendChild(deleteAProject);
+
+
+    const defaultText = document.createElement("h1");
+    defaultText.textContent = "Select an option on the left-hand side to begin!";
+    defaultText.style.fontSize = "5rem";
+    defaultText.style.display = "flex";
+    defaultText.style.alignContent = "center";
+    defaultText.style.justifyContent = "center";
+    defaultText.style.backgroundColor = "#73946B";
+    content.appendChild(defaultText);
 }
