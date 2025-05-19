@@ -1,16 +1,11 @@
-import {logo} from "./logo.svg";
+import { clearContent } from "./clearContent";
+import { viewProjectsPage } from "./viewProjectsPage";
 
 export function loadHomePage() {
+    
+    clearContent();
     const content = document.getElementById("content");
     const nav = document.querySelector("nav");
-
-    while (nav.firstChild) {
-        nav.removeChild(nav.firstChild);
-    }
-
-    while (content.firstChild) {
-        content.removeChild(content.firstChild);
-    }
 
 
     const viewProjects = document.createElement("h2");
@@ -26,6 +21,7 @@ export function loadHomePage() {
     deleteAProject.style.cursor = "pointer";
 
     viewProjects.addEventListener("click", function() {
+        viewProjectsPage();
 
     })
 
