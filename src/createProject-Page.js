@@ -1,3 +1,5 @@
+import { createProject } from "./createProject";
+import { loadHomePage } from "./home-page";
 
 export function loadCreateAProjectPage() {
     const content = document.getElementById("content");
@@ -31,10 +33,9 @@ export function loadCreateAProjectPage() {
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
-        input.value = "";
-
-        // logic to add a project. :) probably a new module 
-
+        const projectName = input.value;
+        createProject(projectName);
+        loadHomePage(); //place holder. would like to update to viewProjects page by default after new creation.
     })
 
     form.appendChild(label);
