@@ -1,5 +1,6 @@
 import { clearContent } from "./clearContent";
 import { viewProjectsPage } from "./viewProjectsPage";
+import { loadCreateAProjectPage } from "./createProject-Page";
 
 export function loadHomePage() {
     
@@ -26,7 +27,7 @@ export function loadHomePage() {
     })
 
     createNewProject.addEventListener("click", function() {
-        
+        loadCreateAProjectPage();
     })
 
     deleteAProject.addEventListener("click", function() {
