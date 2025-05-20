@@ -30,5 +30,4 @@ export function createProject(projectName) {
     projectsArray.push(newProject);
     localStorage.setItem('projects', JSON.stringify(projectsArray));
 
-    alert(newProject);
 }
