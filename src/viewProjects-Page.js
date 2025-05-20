@@ -1,6 +1,7 @@
 import { clearContent } from "./clearContent";
 import { Project } from "./createProject";
 import { loadCreateAProjectPage } from "./createProject-Page";
+import { deleteThisProject } from "./deleteThisProject";
 
 export function loadViewProjectsPage() {
     clearContent();
@@ -82,6 +83,14 @@ export function loadViewProjectsPage() {
             deleteProject.style.cursor = "pointer";
             fullView.style.cursor = "pointer";
             
+            deleteProject.addEventListener("click", function(e) {
+                const projectDiv = e.target.parentElement.parentElement;
+                const projectName = projectDiv.querySelector("h2");
+                const index = projects.findIndex(project => project.name === projectName.textContent);
+                deleteThisProject(index);
+            })
+
+
             buttonDiv.appendChild(fullView);
             buttonDiv.appendChild(deleteProject);
 
