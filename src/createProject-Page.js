@@ -1,12 +1,38 @@
+import { clearContent } from "./clearContent";
 import { createProject } from "./createProject";
 import { loadHomePage } from "./home-page";
+import { viewProjectsPage } from "./viewProjectsPage";
 
 export function loadCreateAProjectPage() {
+    clearContent();
     const content = document.getElementById("content");
+    const nav = document.querySelector("nav");
 
 
-    const noticeText = document.querySelector("#content > h1");
-    noticeText.textContent = "Please Create a Project!";
+        const viewProjects = document.createElement("h2");
+    
+        viewProjects.textContent = "View Projects";
+    
+        viewProjects.style.cursor = "pointer";
+    
+        viewProjects.addEventListener("click", function() {
+            viewProjectsPage();
+    
+        })
+    
+    
+        nav.appendChild(viewProjects);
+
+
+    const defaultText = document.createElement("h1");
+    defaultText.textContent = "Select an option on the left-hand side to begin!";
+    defaultText.style.fontSize = "5rem";
+    defaultText.style.height = "6rem";
+    defaultText.style.display = "flex";
+    defaultText.style.alignContent = "center";
+    defaultText.style.justifyContent = "center";
+    defaultText.style.backgroundColor = "#73946B";
+    content.appendChild(defaultText);
 
     const form = document.createElement("form");
     const label = document.createElement("label");
